@@ -13,6 +13,8 @@
 		DD85C2032A2B15D100DFDE57 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DD85C2012A2B15D100DFDE57 /* Main.storyboard */; };
 		DD85C2052A2B15D600DFDE57 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = DD85C2042A2B15D600DFDE57 /* Assets.xcassets */; };
 		DD85C2082A2B15D600DFDE57 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DD85C2062A2B15D600DFDE57 /* LaunchScreen.storyboard */; };
+		DD85C2112A2B192800DFDE57 /* FirebaseAuth in Frameworks */ = {isa = PBXBuildFile; productRef = DD85C2102A2B192800DFDE57 /* FirebaseAuth */; };
+		DD85C2132A2B19B600DFDE57 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = DD85C2122A2B19B500DFDE57 /* GoogleService-Info.plist */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -24,6 +26,7 @@
 		DD85C2042A2B15D600DFDE57 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		DD85C2072A2B15D600DFDE57 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		DD85C2092A2B15D600DFDE57 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		DD85C2122A2B19B500DFDE57 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -31,6 +34,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				DD85C2112A2B192800DFDE57 /* FirebaseAuth in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -56,6 +60,7 @@
 		DD85C1FA2A2B15D100DFDE57 /* FirebaseRegistrationPractice */ = {
 			isa = PBXGroup;
 			children = (
+				DD85C2122A2B19B500DFDE57 /* GoogleService-Info.plist */,
 				DD85C1FB2A2B15D100DFDE57 /* AppDelegate.swift */,
 				DD85C1FD2A2B15D100DFDE57 /* SceneDelegate.swift */,
 				DD85C1FF2A2B15D100DFDE57 /* ViewController.swift */,
@@ -83,6 +88,9 @@
 			dependencies = (
 			);
 			name = FirebaseRegistrationPractice;
+			packageProductDependencies = (
+				DD85C2102A2B192800DFDE57 /* FirebaseAuth */,
+			);
 			productName = FirebaseRegistrationPractice;
 			productReference = DD85C1F82A2B15D100DFDE57 /* FirebaseRegistrationPractice.app */;
 			productType = "com.apple.product-type.application";
@@ -111,6 +119,9 @@
 				Base,
 			);
 			mainGroup = DD85C1EF2A2B15D000DFDE57;
+			packageReferences = (
+				DD85C20F2A2B192800DFDE57 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */,
+			);
 			productRefGroup = DD85C1F92A2B15D100DFDE57 /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -126,6 +137,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				DD85C2082A2B15D600DFDE57 /* LaunchScreen.storyboard in Resources */,
+				DD85C2132A2B19B600DFDE57 /* GoogleService-Info.plist in Resources */,
 				DD85C2052A2B15D600DFDE57 /* Assets.xcassets in Resources */,
 				DD85C2032A2B15D100DFDE57 /* Main.storyboard in Resources */,
 			);
@@ -366,6 +378,25 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		DD85C20F2A2B192800DFDE57 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/firebase/firebase-ios-sdk.git";
+			requirement = {
+				branch = master;
+				kind = branch;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		DD85C2102A2B192800DFDE57 /* FirebaseAuth */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = DD85C20F2A2B192800DFDE57 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
+			productName = FirebaseAuth;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = DD85C1F02A2B15D000DFDE57 /* Project object */;
 }
