@@ -151,6 +151,16 @@
                             <constraint firstItem="A3r-fJ-mxb" firstAttribute="top" secondItem="iNe-qZ-kd1" secondAttribute="bottom" constant="75" id="xSa-SM-PfV"/>
                         </constraints>
                     </view>
+                    <connections>
+                        <outlet property="deleteAccountButtonView" destination="tvQ-DY-JcP" id="tu7-hl-XMr"/>
+                        <outlet property="logInEmailTextField" destination="5BR-4n-jXQ" id="t1W-yC-ZkS"/>
+                        <outlet property="logInPasswordTextField" destination="iUF-wT-wAM" id="KIs-Dd-fyE"/>
+                        <outlet property="logOutButtonView" destination="uGX-FH-j7b" id="5jG-79-oxN"/>
+                        <outlet property="registrationEmailTextField" destination="K6e-zw-DH7" id="Wh1-H4-13b"/>
+                        <outlet property="registrationPasswordTextField" destination="WTh-5T-6yK" id="pPl-rU-EQe"/>
+                        <outlet property="registrationRepeatPasswordTextField" destination="s10-lb-5dk" id="SI6-gP-skT"/>
+                        <outlet property="resetPasswordEmailTextField" destination="fsB-at-S5l" id="QOE-70-Nw2"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
