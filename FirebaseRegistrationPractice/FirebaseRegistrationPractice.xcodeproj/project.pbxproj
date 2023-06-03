@@ -15,6 +15,9 @@
 		DD85C2082A2B15D600DFDE57 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DD85C2062A2B15D600DFDE57 /* LaunchScreen.storyboard */; };
 		DD85C2112A2B192800DFDE57 /* FirebaseAuth in Frameworks */ = {isa = PBXBuildFile; productRef = DD85C2102A2B192800DFDE57 /* FirebaseAuth */; };
 		DD85C2152A2B1C8300DFDE57 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = DD85C2142A2B1C8300DFDE57 /* GoogleService-Info.plist */; };
+		DD85C2192A2B325400DFDE57 /* AuthenticationState.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD85C2182A2B325400DFDE57 /* AuthenticationState.swift */; };
+		DD85C21B2A2B326400DFDE57 /* AuthenticationFlow.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD85C21A2A2B326400DFDE57 /* AuthenticationFlow.swift */; };
+		DD85C21D2A2B32E500DFDE57 /* AuthenticationManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD85C21C2A2B32E500DFDE57 /* AuthenticationManager.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -27,6 +30,9 @@
 		DD85C2072A2B15D600DFDE57 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		DD85C2092A2B15D600DFDE57 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		DD85C2142A2B1C8300DFDE57 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
+		DD85C2182A2B325400DFDE57 /* AuthenticationState.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthenticationState.swift; sourceTree = "<group>"; };
+		DD85C21A2A2B326400DFDE57 /* AuthenticationFlow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthenticationFlow.swift; sourceTree = "<group>"; };
+		DD85C21C2A2B32E500DFDE57 /* AuthenticationManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthenticationManager.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -64,12 +70,31 @@
 				DD85C1FB2A2B15D100DFDE57 /* AppDelegate.swift */,
 				DD85C1FD2A2B15D100DFDE57 /* SceneDelegate.swift */,
 				DD85C1FF2A2B15D100DFDE57 /* ViewController.swift */,
+				DD85C2172A2B31EA00DFDE57 /* AuthenticationManager */,
+				DD85C2162A2B31E000DFDE57 /* Enums */,
 				DD85C2012A2B15D100DFDE57 /* Main.storyboard */,
 				DD85C2042A2B15D600DFDE57 /* Assets.xcassets */,
 				DD85C2062A2B15D600DFDE57 /* LaunchScreen.storyboard */,
 				DD85C2092A2B15D600DFDE57 /* Info.plist */,
 			);
 			path = FirebaseRegistrationPractice;
+			sourceTree = "<group>";
+		};
+		DD85C2162A2B31E000DFDE57 /* Enums */ = {
+			isa = PBXGroup;
+			children = (
+				DD85C2182A2B325400DFDE57 /* AuthenticationState.swift */,
+				DD85C21A2A2B326400DFDE57 /* AuthenticationFlow.swift */,
+			);
+			path = Enums;
+			sourceTree = "<group>";
+		};
+		DD85C2172A2B31EA00DFDE57 /* AuthenticationManager */ = {
+			isa = PBXGroup;
+			children = (
+				DD85C21C2A2B32E500DFDE57 /* AuthenticationManager.swift */,
+			);
+			path = AuthenticationManager;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -151,8 +176,11 @@
 			buildActionMask = 2147483647;
 			files = (
 				DD85C2002A2B15D100DFDE57 /* ViewController.swift in Sources */,
+				DD85C2192A2B325400DFDE57 /* AuthenticationState.swift in Sources */,
 				DD85C1FC2A2B15D100DFDE57 /* AppDelegate.swift in Sources */,
+				DD85C21D2A2B32E500DFDE57 /* AuthenticationManager.swift in Sources */,
 				DD85C1FE2A2B15D100DFDE57 /* SceneDelegate.swift in Sources */,
+				DD85C21B2A2B326400DFDE57 /* AuthenticationFlow.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

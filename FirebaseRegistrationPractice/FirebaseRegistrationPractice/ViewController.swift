@@ -43,6 +43,8 @@ class ViewController: UIViewController {
     // MARK: - IBActions
     
     @IBAction func signUpButtonAction(_ sender: UIButton) {
+        
+        
     }
     
     @IBAction func logInButtonAction(_ sender: UIButton) {
