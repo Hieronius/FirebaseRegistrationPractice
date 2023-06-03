@@ -2,18 +2,22 @@
 <!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
 <plist version="1.0">
 <dict>
+	<key>CLIENT_ID</key>
+	<string>103389766086-ouf3r5lkj9jnbf9g9qoqpk5hta9cam3v.apps.googleusercontent.com</string>
+	<key>REVERSED_CLIENT_ID</key>
+	<string>com.googleusercontent.apps.103389766086-ouf3r5lkj9jnbf9g9qoqpk5hta9cam3v</string>
 	<key>API_KEY</key>
-	<string>AIzaSyAnyToHaq8Fk7F1UwfOGIcc7zGC2kk0d_g</string>
+	<string>AIzaSyBkmCtqdJLZ2xJnxi0iRM_FuCKlN-4G37Q</string>
 	<key>GCM_SENDER_ID</key>
-	<string>983502541008</string>
+	<string>103389766086</string>
 	<key>PLIST_VERSION</key>
 	<string>1</string>
 	<key>BUNDLE_ID</key>
 	<string>Hieronius.FirebaseRegistrationPractice</string>
 	<key>PROJECT_ID</key>
-	<string>blacktodolist-bc24a</string>
+	<string>fir-practice-461ed</string>
 	<key>STORAGE_BUCKET</key>
-	<string>blacktodolist-bc24a.appspot.com</string>
+	<string>fir-practice-461ed.appspot.com</string>
 	<key>IS_ADS_ENABLED</key>
 	<false></false>
 	<key>IS_ANALYTICS_ENABLED</key>
@@ -25,6 +29,6 @@
 	<key>IS_SIGNIN_ENABLED</key>
 	<true></true>
 	<key>GOOGLE_APP_ID</key>
-	<string>1:983502541008:ios:6820c16da71184863c0ed5</string>
+	<string>1:103389766086:ios:ea5225c719bb512d9a92c7</string>
 </dict>
 </plist>
