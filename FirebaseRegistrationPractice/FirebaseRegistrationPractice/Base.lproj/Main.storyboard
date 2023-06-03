@@ -65,16 +65,25 @@
                                         <rect key="frame" x="0.0" y="0.0" width="107.5" height="34.5"/>
                                         <state key="normal" title="Button"/>
                                         <buttonConfiguration key="configuration" style="filled" title="LogOut"/>
+                                        <connections>
+                                            <action selector="logOutButtonAction:" destination="BYZ-38-t0r" eventType="touchUpInside" id="Dpa-Zv-zuk"/>
+                                        </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="6lw-IQ-RwZ">
                                         <rect key="frame" x="118.5" y="0.0" width="108" height="34.5"/>
                                         <state key="normal" title="Button"/>
                                         <buttonConfiguration key="configuration" style="filled" title="ResetPass"/>
+                                        <connections>
+                                            <action selector="resetPasswordButtonAction:" destination="BYZ-38-t0r" eventType="touchUpInside" id="jnX-c3-qqj"/>
+                                        </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="tvQ-DY-JcP">
                                         <rect key="frame" x="237.5" y="0.0" width="107.5" height="34.5"/>
                                         <state key="normal" title="Button"/>
                                         <buttonConfiguration key="configuration" style="filled" title="DeleteAcc"/>
+                                        <connections>
+                                            <action selector="deleteAccoutButtonAction:" destination="BYZ-38-t0r" eventType="touchUpInside" id="kOY-fC-L0i"/>
+                                        </connections>
                                     </button>
                                 </subviews>
                             </stackView>
@@ -94,6 +103,9 @@
                                 <rect key="frame" x="148" y="172" width="79.5" height="34.5"/>
                                 <state key="normal" title="Button"/>
                                 <buttonConfiguration key="configuration" style="filled" title="SignUp"/>
+                                <connections>
+                                    <action selector="signUpButtonAction:" destination="BYZ-38-t0r" eventType="touchUpInside" id="kVt-pj-QZP"/>
+                                </connections>
                             </button>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="19" translatesAutoresizingMaskIntoConstraints="NO" id="A3r-fJ-mxb">
                                 <rect key="frame" x="25" y="281.5" width="325" height="87"/>
@@ -128,6 +140,9 @@
                                 <rect key="frame" x="154.5" y="383.5" width="66" height="34.5"/>
                                 <state key="normal" title="Button"/>
                                 <buttonConfiguration key="configuration" style="filled" title="LogIn"/>
+                                <connections>
+                                    <action selector="logInButtonAction:" destination="BYZ-38-t0r" eventType="touchUpInside" id="C09-K7-51m"/>
+                                </connections>
                             </button>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>

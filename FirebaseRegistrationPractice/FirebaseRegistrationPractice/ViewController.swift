@@ -39,7 +39,26 @@ class ViewController: UIViewController {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
     }
-
-
+    
+    // MARK: - IBActions
+    
+    @IBAction func signUpButtonAction(_ sender: UIButton) {
+    }
+    
+    @IBAction func logInButtonAction(_ sender: UIButton) {
+    }
+    
+    @IBAction func resetPasswordButtonAction(_ sender: UIButton) {
+    }
+    
+    // MARK: Should change a state of user authorisation
+    
+    @IBAction func logOutButtonAction(_ sender: UIButton) {
+    }
+    
+    @IBAction func deleteAccoutButtonAction(_ sender: UIButton) {
+    }
+    
+    
 }
 
