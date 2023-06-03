@@ -33,6 +33,10 @@ class ViewController: UIViewController {
     @IBOutlet weak var logOutButtonView: UIButton!
     @IBOutlet weak var deleteAccountButtonView: UIButton!
     
+    // MARK: - Private Properties
+    
+    private var currentUserState: AuthenticationState?
+    
     // MARK: - Lifecycle
     
     override func viewDidLoad() {
@@ -42,7 +46,28 @@ class ViewController: UIViewController {
     
     // MARK: - IBActions
     
+    // Creation of new account
+    // Method working correctly
     @IBAction func signUpButtonAction(_ sender: UIButton) {
+        // check to prevent nil in login/pass fields
+        let email = registrationEmailTextField.text ?? ""
+        let password = registrationPasswordTextField.text ?? ""
+        
+        // create account via Firebase
+        // probably we use weak self to make a link to the current view controller you have data from
+        FirebaseAuth.Auth.auth().createUser(withEmail: email, password: password) { [weak self] authResult, error in
+            
+            // check is there a data for account creation
+            guard let strongSelf = self else { return }
+            
+            // is not print a message and exit the method
+            guard error == nil else {
+                print("Account creation failed")
+                return
+            }
+            // we should see this message if account has been created
+            print("Account has been created")
+        }
         
         
     }

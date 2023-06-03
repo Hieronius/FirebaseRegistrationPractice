@@ -8,27 +8,34 @@
 import Foundation
 
 // The whole manager you manager interactions with the user
-class AuthenticationManager {
-    // seems like it's about log in
-    func signInWithEmailPassword() async -> Bool {
-        authentificationState = .authentificating
-        await wait()
-        authentificationState = .authentificated
-        return true
-    }
+//class AuthenticationManager {
+//    
+//    static var shared = AuthenticationManager()
+//    // seems like it's about log in
+//    func signInWithEmailPassword(currentState: AuthenticationState) async -> Bool {
+//        // fix accordingly to Enum
+//        var currentUserState = currentState
+//        currentUserState = .authenticating
+//        await wait()
+//        currentUserState = .authenticated
+//        return true
+//    }
     // this mean to sign up
-    func signUpWithEmailPassword() async -> Bool {
-        authentificationState = .authentificating
-        await wait()
-        authentificationState = .authentificated
-        return true
-    }
-    
-    func signOut() {
-        authenticationState = .unauthenticated
-    }
-    
-    func deleteAccount() async -> Bool {
-        authenticationState = .unauthenticated
-    }
-}
+//    func signUpWithEmailPassword() async -> Bool {
+//        // fix accordingly to Enum
+//        authentificationState = .authentificating
+//        await wait()
+//        authentificationState = .authentificated
+//        return true
+//    }
+//
+//    func signOut() {
+//        // fix accordingly to Enum
+//        authenticationState = .unauthenticated
+//    }
+//
+//    func deleteAccount() async -> Bool {
+//        // fix accordingly to Enum
+//        authenticationState = .unauthenticated
+//    }
+// }

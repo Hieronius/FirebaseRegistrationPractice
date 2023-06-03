@@ -18,6 +18,8 @@
 		DD85C2192A2B325400DFDE57 /* AuthenticationState.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD85C2182A2B325400DFDE57 /* AuthenticationState.swift */; };
 		DD85C21B2A2B326400DFDE57 /* AuthenticationFlow.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD85C21A2A2B326400DFDE57 /* AuthenticationFlow.swift */; };
 		DD85C21D2A2B32E500DFDE57 /* AuthenticationManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD85C21C2A2B32E500DFDE57 /* AuthenticationManager.swift */; };
+		DD85C21F2A2B359400DFDE57 /* AuthManagerTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD85C21E2A2B359400DFDE57 /* AuthManagerTest.swift */; };
+		DD85C2212A2B398E00DFDE57 /* RegistrationManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD85C2202A2B398E00DFDE57 /* RegistrationManager.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -33,6 +35,8 @@
 		DD85C2182A2B325400DFDE57 /* AuthenticationState.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthenticationState.swift; sourceTree = "<group>"; };
 		DD85C21A2A2B326400DFDE57 /* AuthenticationFlow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthenticationFlow.swift; sourceTree = "<group>"; };
 		DD85C21C2A2B32E500DFDE57 /* AuthenticationManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthenticationManager.swift; sourceTree = "<group>"; };
+		DD85C21E2A2B359400DFDE57 /* AuthManagerTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthManagerTest.swift; sourceTree = "<group>"; };
+		DD85C2202A2B398E00DFDE57 /* RegistrationManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegistrationManager.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -93,6 +97,8 @@
 			isa = PBXGroup;
 			children = (
 				DD85C21C2A2B32E500DFDE57 /* AuthenticationManager.swift */,
+				DD85C21E2A2B359400DFDE57 /* AuthManagerTest.swift */,
+				DD85C2202A2B398E00DFDE57 /* RegistrationManager.swift */,
 			);
 			path = AuthenticationManager;
 			sourceTree = "<group>";
@@ -177,9 +183,11 @@
 			files = (
 				DD85C2002A2B15D100DFDE57 /* ViewController.swift in Sources */,
 				DD85C2192A2B325400DFDE57 /* AuthenticationState.swift in Sources */,
+				DD85C2212A2B398E00DFDE57 /* RegistrationManager.swift in Sources */,
 				DD85C1FC2A2B15D100DFDE57 /* AppDelegate.swift in Sources */,
 				DD85C21D2A2B32E500DFDE57 /* AuthenticationManager.swift in Sources */,
 				DD85C1FE2A2B15D100DFDE57 /* SceneDelegate.swift in Sources */,
+				DD85C21F2A2B359400DFDE57 /* AuthManagerTest.swift in Sources */,
 				DD85C21B2A2B326400DFDE57 /* AuthenticationFlow.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
