@@ -73,6 +73,24 @@ class ViewController: UIViewController {
     }
     
     @IBAction func logInButtonAction(_ sender: UIButton) {
+        // check to find a nil or define a default values
+        let email = logInEmailTextField.text ?? ""
+        let password = logInPasswordTextField.text ?? ""
+        // actually log in to the app and define self as the same viewController where you got user data
+        // using strongSelf it's just a way to check is there a nil in "self" property or not.
+        FirebaseAuth.Auth.auth().signIn(withEmail: email, password: password) { [weak self] resutl, error in
+            guard let result = self else { return }
+            
+            guard error == nil else {
+                print("wrong login or password")
+                return
+            }
+            // we should see if user log in was successful
+            print("Welcome to the app!")
+            print(FirebaseAuth.Auth.auth().currentUser)
+            print(FirebaseAuth.Auth.auth().currentUser?.email)
+            
+        }
     }
     
     @IBAction func resetPasswordButtonAction(_ sender: UIButton) {
@@ -85,7 +103,6 @@ class ViewController: UIViewController {
     
     @IBAction func deleteAccoutButtonAction(_ sender: UIButton) {
     }
-    
     
 }
 
