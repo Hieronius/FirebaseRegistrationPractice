@@ -69,7 +69,7 @@
                                             <action selector="logOutButtonAction:" destination="BYZ-38-t0r" eventType="touchUpInside" id="Dpa-Zv-zuk"/>
                                         </connections>
                                     </button>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="6lw-IQ-RwZ">
+                                    <button opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="249" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="6lw-IQ-RwZ">
                                         <rect key="frame" x="118.5" y="0.0" width="108" height="34.5"/>
                                         <state key="normal" title="Button"/>
                                         <buttonConfiguration key="configuration" style="filled" title="ResetPass"/>
@@ -77,7 +77,7 @@
                                             <action selector="resetPasswordButtonAction:" destination="BYZ-38-t0r" eventType="touchUpInside" id="jnX-c3-qqj"/>
                                         </connections>
                                     </button>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="tvQ-DY-JcP">
+                                    <button opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="tvQ-DY-JcP">
                                         <rect key="frame" x="237.5" y="0.0" width="107.5" height="34.5"/>
                                         <state key="normal" title="Button"/>
                                         <buttonConfiguration key="configuration" style="filled" title="DeleteAcc"/>
@@ -144,23 +144,36 @@
                                     <action selector="logInButtonAction:" destination="BYZ-38-t0r" eventType="touchUpInside" id="C09-K7-51m"/>
                                 </connections>
                             </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Logged in" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ecx-fB-WlB">
+                                <rect key="frame" x="117" y="453" width="140" height="42"/>
+                                <color key="backgroundColor" systemColor="systemGreenColor"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="42" id="Tpu-1o-SYC"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="17"/>
+                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                         <color key="backgroundColor" systemColor="systemPinkColor"/>
                         <constraints>
                             <constraint firstItem="FM0-ht-5eU" firstAttribute="top" secondItem="A3r-fJ-mxb" secondAttribute="bottom" constant="15" id="8AY-RW-jbf"/>
+                            <constraint firstItem="ecx-fB-WlB" firstAttribute="top" secondItem="FM0-ht-5eU" secondAttribute="bottom" constant="35" id="Aq9-2d-FEz"/>
                             <constraint firstItem="fsB-at-S5l" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="25" id="GVa-fs-WvE"/>
                             <constraint firstItem="A3r-fJ-mxb" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="25" id="J40-FZ-PVj"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="fsB-at-S5l" secondAttribute="trailing" constant="25" id="OLI-NM-qui"/>
                             <constraint firstAttribute="trailing" secondItem="fGt-C6-U5o" secondAttribute="trailing" constant="15" id="Orb-dh-Y8X"/>
                             <constraint firstItem="fGt-C6-U5o" firstAttribute="top" secondItem="fsB-at-S5l" secondAttribute="bottom" constant="15" id="Ppu-jh-8Wt"/>
-                            <constraint firstItem="fsB-at-S5l" firstAttribute="top" secondItem="FM0-ht-5eU" secondAttribute="bottom" constant="125" id="QqC-v3-hHO"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="A3r-fJ-mxb" secondAttribute="trailing" constant="25" id="RwI-lu-w7n"/>
                             <constraint firstItem="fGt-C6-U5o" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" constant="15" id="RxT-ty-lQn"/>
                             <constraint firstItem="WgC-32-5Lx" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="15" id="SyG-J3-nYK"/>
                             <constraint firstItem="iNe-qZ-kd1" firstAttribute="top" secondItem="WgC-32-5Lx" secondAttribute="bottom" constant="15" id="U4J-ni-Oix"/>
+                            <constraint firstAttribute="trailing" secondItem="ecx-fB-WlB" secondAttribute="trailing" constant="118" id="adA-AC-l8u"/>
                             <constraint firstItem="iNe-qZ-kd1" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="agM-fE-Q3d"/>
+                            <constraint firstItem="fsB-at-S5l" firstAttribute="top" secondItem="ecx-fB-WlB" secondAttribute="bottom" constant="48" id="c73-L4-NEt"/>
                             <constraint firstItem="FM0-ht-5eU" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="dQg-lq-sT5"/>
+                            <constraint firstItem="ecx-fB-WlB" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" constant="117" id="qOx-nH-aYl"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="WgC-32-5Lx" secondAttribute="trailing" constant="25" id="srw-Tr-WHe"/>
                             <constraint firstItem="WgC-32-5Lx" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="25" id="u4K-Rl-Iku"/>
                             <constraint firstItem="A3r-fJ-mxb" firstAttribute="top" secondItem="iNe-qZ-kd1" secondAttribute="bottom" constant="75" id="xSa-SM-PfV"/>
@@ -179,10 +192,13 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="836" y="3"/>
+            <point key="canvasLocation" x="836" y="2.2488755622188905"/>
         </scene>
     </scenes>
     <resources>
+        <systemColor name="systemGreenColor">
+            <color red="0.20392156862745098" green="0.7803921568627451" blue="0.34901960784313724" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </systemColor>
         <systemColor name="systemPinkColor">
             <color red="1" green="0.17647058823529413" blue="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>
