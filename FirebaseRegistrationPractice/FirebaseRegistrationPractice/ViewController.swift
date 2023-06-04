@@ -32,6 +32,15 @@ class ViewController: UIViewController {
     
     @IBOutlet weak var logOutButtonView: UIButton!
     @IBOutlet weak var deleteAccountButtonView: UIButton!
+    @IBOutlet weak var isUserLoggedIn: UILabel! {
+        didSet {
+            if FirebaseAuth.Auth.auth().currentUser != nil {
+                // isUserLoggedIn.isHidden = false
+                isUserLoggedIn.isEnabled = true
+                print("User already logged in")
+            }
+        }
+    }
     
     // MARK: - Private Properties
     
@@ -99,6 +108,8 @@ class ViewController: UIViewController {
     // MARK: Should change a state of user authorisation
     
     @IBAction func logOutButtonAction(_ sender: UIButton) {
+        print(FirebaseAuth.Auth.auth().currentUser)
+        print(FirebaseAuth.Auth.auth().currentUser?.email)
     }
     
     @IBAction func deleteAccoutButtonAction(_ sender: UIButton) {

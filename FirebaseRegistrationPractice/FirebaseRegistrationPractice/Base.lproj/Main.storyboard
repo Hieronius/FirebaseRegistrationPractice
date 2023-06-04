@@ -144,7 +144,7 @@
                                     <action selector="logInButtonAction:" destination="BYZ-38-t0r" eventType="touchUpInside" id="C09-K7-51m"/>
                                 </connections>
                             </button>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Logged in" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ecx-fB-WlB">
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Logged in" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" enabled="NO" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ecx-fB-WlB">
                                 <rect key="frame" x="117" y="453" width="140" height="42"/>
                                 <color key="backgroundColor" systemColor="systemGreenColor"/>
                                 <constraints>
@@ -181,6 +181,7 @@
                     </view>
                     <connections>
                         <outlet property="deleteAccountButtonView" destination="tvQ-DY-JcP" id="tu7-hl-XMr"/>
+                        <outlet property="isUserLoggedIn" destination="ecx-fB-WlB" id="EvH-3v-Ijy"/>
                         <outlet property="logInEmailTextField" destination="5BR-4n-jXQ" id="t1W-yC-ZkS"/>
                         <outlet property="logInPasswordTextField" destination="iUF-wT-wAM" id="KIs-Dd-fyE"/>
                         <outlet property="logOutButtonView" destination="uGX-FH-j7b" id="5jG-79-oxN"/>
