@@ -89,31 +89,36 @@ class ViewController: UIViewController {
     }
     
     @IBAction func logInButtonAction(_ sender: UIButton) {
+         Task {
+            // run code asynchronously even in synchronous method of UIButton
+            // It's still running in the main thread but in the background
+            // Firebae guides provides info that almost all of their API is asynchronous, so i will try to use Tasks for these purposes
             
             // check to find a nil or define a default values
             let email = self.logInEmailTextField.text ?? ""
             let password = self.logInPasswordTextField.text ?? ""
             
-        FirebaseAuth.Auth.auth().signIn(withEmail: email, password: password) { [weak self] resutl, error in
-            guard let result = self else { return }
-            
-            guard error == nil else {
-                print("wrong login or password")
-                return
+             FirebaseAuth.Auth.auth().signIn(withEmail: email, password: password) { [weak self] resutl, error in
+                guard let result = self else { return }
+                
+                guard error == nil else {
+                    print("wrong login or password")
+                    return
+                }
+                print("Welcome to the app!")
+                self?.isUserLoggedIn.isHidden = false
+                print(FirebaseAuth.Auth.auth().currentUser)
+                print(FirebaseAuth.Auth.auth().currentUser?.email)
+                // little code about how to check is emailVerified or not
+                if Auth.auth().currentUser?.isEmailVerified == true {
+                    print("User is verified")
+                } else {
+                    print("User still need to verify email")
+                }
             }
-            print("Welcome to the app!")
-            self?.isUserLoggedIn.isHidden = false
-            print(FirebaseAuth.Auth.auth().currentUser)
-            print(FirebaseAuth.Auth.auth().currentUser?.email)
-            // little code about how to check is emailVerified or not
-            if Auth.auth().currentUser?.isEmailVerified == true {
-                print("User is verified")
-            } else {
-                print("User still need to verify email")
-            }
-        }
             // we should see if user log in was successful
             
+         }
     }
     
     @IBAction func resetPasswordButtonAction(_ sender: UIButton) {
