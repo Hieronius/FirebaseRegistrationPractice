@@ -32,15 +32,10 @@ class ViewController: UIViewController {
     
     @IBOutlet weak var logOutButtonView: UIButton!
     @IBOutlet weak var deleteAccountButtonView: UIButton!
-    @IBOutlet weak var isUserLoggedIn: UILabel! {
-        didSet {
-            if FirebaseAuth.Auth.auth().currentUser != nil {
-                // isUserLoggedIn.isHidden = false
-                isUserLoggedIn.isEnabled = true
-                print("User already logged in")
-            }
-        }
-    }
+    
+    // this outlet should change it's state each time when the state of the user authorisation has been changed. But something wrong for the time being.
+    // Let's come back when i will be on the stage of making button "Log Out" in the "Settings View Controller"
+    @IBOutlet weak var isUserLoggedIn: UILabel!
     
     // MARK: - Private Properties
     
@@ -69,9 +64,39 @@ class ViewController: UIViewController {
             // check is there a data for account creation
             guard let strongSelf = self else { return }
             
+            // section to try to implement email verification
+            let actionCodeSettings = ActionCodeSettings()
+            // actionCodeSettings.url = URL(string: "https://www.localhost.com")
+            // actionCodeSettings.url = URL(string: "http://localhost/")
+            // actionCodeSettings.url = URL(string: "https://www.noreply@fir-practice-461ed.firebaseapp.com")
+            // actionCodeSettings.url = URL(string: "https://myapp.com")
+             actionCodeSettings.url = URL(string: "https://fir-practice-461ed.firebaseapp.com")
+            // actionCodeSettings.url = URL(string: "https://hieronius.page.link/email-link-login")
+            actionCodeSettings.handleCodeInApp = true
+            actionCodeSettings.setIOSBundleID(Bundle.main.bundleIdentifier!)
+            
+            // section to try to send an email for verification
+            FirebaseAuth.Auth.auth().sendSignInLink(toEmail: email, actionCodeSettings: actionCodeSettings) {
+                error in
+                if let error = error {
+                    // self.showMessagePrompt(error.localizedDescription)
+                    print(error.localizedDescription)
+                    return
+                }
+                // The link was successfully sent. Inform the user.
+                // Save the email locally so you don't need to ask the user for it again
+                UserDefaults.standard.set(email, forKey: "Email")
+                // self.showMessagePrompt("Check your email for link")
+                print("Check your email for link")
+            }
+            
             // is not print a message and exit the method
             guard error == nil else {
                 print("Account creation failed")
+                // error handling for allert controller if user trying to use email which is already exist in the system
+                if error?.localizedDescription == "The email address is already in use by another account." {
+                    print("Email already in use")
+                }
                 return
             }
             // we should see this message if account has been created
@@ -96,24 +121,39 @@ class ViewController: UIViewController {
             }
             // we should see if user log in was successful
             print("Welcome to the app!")
+            self!.isUserLoggedIn.isHidden = false
             print(FirebaseAuth.Auth.auth().currentUser)
             print(FirebaseAuth.Auth.auth().currentUser?.email)
-            
         }
     }
     
     @IBAction func resetPasswordButtonAction(_ sender: UIButton) {
+        print(FirebaseAuth.Auth.auth().currentUser)
+        print(FirebaseAuth.Auth.auth().currentUser?.email)
     }
     
     // MARK: Should change a state of user authorisation
     
     @IBAction func logOutButtonAction(_ sender: UIButton) {
-        print(FirebaseAuth.Auth.auth().currentUser)
-        print(FirebaseAuth.Auth.auth().currentUser?.email)
+        // define an instance of FirebaseAuthorisation module
+        let firebaseAuth = FirebaseAuth.Auth.auth()
+        
+        // implement error handling while you wan't log out. Seems like it's need because there can be nil instead of user. (First loading of the app for example)
+        do {
+            try firebaseAuth.signOut()
+            self.isUserLoggedIn.isHidden = true
+            print("User has been logged out")
+        } catch let signOutError as NSError {
+            print("Error signing out: %@", signOutError)
+        }
+        
     }
     
     @IBAction func deleteAccoutButtonAction(_ sender: UIButton) {
     }
+    
+    // MARK: - Private Methods
+    
     
 }
 

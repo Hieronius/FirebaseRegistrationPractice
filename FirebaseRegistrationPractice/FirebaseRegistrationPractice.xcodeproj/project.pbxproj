@@ -20,6 +20,7 @@
 		DD85C21D2A2B32E500DFDE57 /* AuthenticationManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD85C21C2A2B32E500DFDE57 /* AuthenticationManager.swift */; };
 		DD85C21F2A2B359400DFDE57 /* AuthManagerTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD85C21E2A2B359400DFDE57 /* AuthManagerTest.swift */; };
 		DD85C2212A2B398E00DFDE57 /* RegistrationManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD85C2202A2B398E00DFDE57 /* RegistrationManager.swift */; };
+		DD8A84302A2C66F2008BE7AA /* IQKeyboardManagerSwift in Frameworks */ = {isa = PBXBuildFile; productRef = DD8A842F2A2C66F2008BE7AA /* IQKeyboardManagerSwift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -45,6 +46,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				DD85C2112A2B192800DFDE57 /* FirebaseAuth in Frameworks */,
+				DD8A84302A2C66F2008BE7AA /* IQKeyboardManagerSwift in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -121,6 +123,7 @@
 			name = FirebaseRegistrationPractice;
 			packageProductDependencies = (
 				DD85C2102A2B192800DFDE57 /* FirebaseAuth */,
+				DD8A842F2A2C66F2008BE7AA /* IQKeyboardManagerSwift */,
 			);
 			productName = FirebaseRegistrationPractice;
 			productReference = DD85C1F82A2B15D100DFDE57 /* FirebaseRegistrationPractice.app */;
@@ -152,6 +155,7 @@
 			mainGroup = DD85C1EF2A2B15D000DFDE57;
 			packageReferences = (
 				DD85C20F2A2B192800DFDE57 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */,
+				DD8A842E2A2C66F2008BE7AA /* XCRemoteSwiftPackageReference "IQKeyboardManager" */,
 			);
 			productRefGroup = DD85C1F92A2B15D100DFDE57 /* Products */;
 			projectDirPath = "";
@@ -424,6 +428,14 @@
 				kind = branch;
 			};
 		};
+		DD8A842E2A2C66F2008BE7AA /* XCRemoteSwiftPackageReference "IQKeyboardManager" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/hackiftekhar/IQKeyboardManager.git";
+			requirement = {
+				branch = master;
+				kind = branch;
+			};
+		};
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
@@ -431,6 +443,11 @@
 			isa = XCSwiftPackageProductDependency;
 			package = DD85C20F2A2B192800DFDE57 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
 			productName = FirebaseAuth;
+		};
+		DD8A842F2A2C66F2008BE7AA /* IQKeyboardManagerSwift */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = DD8A842E2A2C66F2008BE7AA /* XCRemoteSwiftPackageReference "IQKeyboardManager" */;
+			productName = IQKeyboardManagerSwift;
 		};
 /* End XCSwiftPackageProductDependency section */
 	};

@@ -144,7 +144,7 @@
                                     <action selector="logInButtonAction:" destination="BYZ-38-t0r" eventType="touchUpInside" id="C09-K7-51m"/>
                                 </connections>
                             </button>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Logged in" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" enabled="NO" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ecx-fB-WlB">
+                            <label hidden="YES" opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Logged in" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ecx-fB-WlB">
                                 <rect key="frame" x="117" y="453" width="140" height="42"/>
                                 <color key="backgroundColor" systemColor="systemGreenColor"/>
                                 <constraints>
