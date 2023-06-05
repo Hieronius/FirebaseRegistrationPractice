@@ -117,8 +117,11 @@ class ViewController: UIViewController {
     }
     
     @IBAction func resetPasswordButtonAction(_ sender: UIButton) {
-        print(FirebaseAuth.Auth.auth().currentUser)
-        print(FirebaseAuth.Auth.auth().currentUser?.email)
+        
+        let email = resetPasswordEmailTextField.text ?? ""
+
+        FirebaseAuth.Auth.auth().sendPasswordReset(withEmail: email)
+        print("Email with a link to change your password has been send")
     }
     
     // MARK: Should change a state of user authorisation
@@ -139,6 +142,8 @@ class ViewController: UIViewController {
     }
     
     @IBAction func deleteAccoutButtonAction(_ sender: UIButton) {
+        FirebaseAuth.Auth.auth().currentUser?.delete()
+        print("Your account has been deleted")
     }
     
     // MARK: - Private Methods
