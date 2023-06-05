@@ -57,6 +57,7 @@ class ViewController: UIViewController {
         let email = registrationEmailTextField.text ?? ""
         let password = registrationPasswordTextField.text ?? ""
         
+        // MARK: Create a new account
         // create account via Firebase
         // probably we use weak self to make a link to the current view controller you have data from
         FirebaseAuth.Auth.auth().createUser(withEmail: email, password: password) { [weak self] authResult, error in
@@ -64,31 +65,12 @@ class ViewController: UIViewController {
             // check is there a data for account creation
             guard let strongSelf = self else { return }
             
-            // section to try to implement email verification
-            let actionCodeSettings = ActionCodeSettings()
-            // actionCodeSettings.url = URL(string: "https://www.localhost.com")
-            // actionCodeSettings.url = URL(string: "http://localhost/")
-            // actionCodeSettings.url = URL(string: "https://www.noreply@fir-practice-461ed.firebaseapp.com")
-            // actionCodeSettings.url = URL(string: "https://myapp.com")
-             actionCodeSettings.url = URL(string: "https://fir-practice-461ed.firebaseapp.com")
-            // actionCodeSettings.url = URL(string: "https://hieronius.page.link/email-link-login")
-            actionCodeSettings.handleCodeInApp = true
-            actionCodeSettings.setIOSBundleID(Bundle.main.bundleIdentifier!)
             
-            // section to try to send an email for verification
-            FirebaseAuth.Auth.auth().sendSignInLink(toEmail: email, actionCodeSettings: actionCodeSettings) {
-                error in
-                if let error = error {
-                    // self.showMessagePrompt(error.localizedDescription)
-                    print(error.localizedDescription)
-                    return
-                }
-                // The link was successfully sent. Inform the user.
-                // Save the email locally so you don't need to ask the user for it again
-                UserDefaults.standard.set(email, forKey: "Email")
-                // self.showMessagePrompt("Check your email for link")
-                print("Check your email for link")
-            }
+            // MARK: Email verification
+            // this code is really working
+            Auth.auth().currentUser?.sendEmailVerification()
+            
+            
             
             // is not print a message and exit the method
             guard error == nil else {
@@ -107,11 +89,11 @@ class ViewController: UIViewController {
     }
     
     @IBAction func logInButtonAction(_ sender: UIButton) {
-        // check to find a nil or define a default values
-        let email = logInEmailTextField.text ?? ""
-        let password = logInPasswordTextField.text ?? ""
-        // actually log in to the app and define self as the same viewController where you got user data
-        // using strongSelf it's just a way to check is there a nil in "self" property or not.
+            
+            // check to find a nil or define a default values
+            let email = self.logInEmailTextField.text ?? ""
+            let password = self.logInPasswordTextField.text ?? ""
+            
         FirebaseAuth.Auth.auth().signIn(withEmail: email, password: password) { [weak self] resutl, error in
             guard let result = self else { return }
             
@@ -119,12 +101,19 @@ class ViewController: UIViewController {
                 print("wrong login or password")
                 return
             }
-            // we should see if user log in was successful
             print("Welcome to the app!")
-            self!.isUserLoggedIn.isHidden = false
+            self?.isUserLoggedIn.isHidden = false
             print(FirebaseAuth.Auth.auth().currentUser)
             print(FirebaseAuth.Auth.auth().currentUser?.email)
+            // little code about how to check is emailVerified or not
+            if Auth.auth().currentUser?.isEmailVerified == true {
+                print("User is verified")
+            } else {
+                print("User still need to verify email")
+            }
         }
+            // we should see if user log in was successful
+            
     }
     
     @IBAction func resetPasswordButtonAction(_ sender: UIButton) {
