@@ -41,14 +41,24 @@ class ViewController: UIViewController {
     
     private var currentUserState: AuthenticationState?
     
+    private var customCleanButton = CleaningButton()
+    
     // MARK: - Lifecycle
     
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
+        
+        setupUI()
     }
     
     // MARK: - IBActions
+    
+    @objc private func cleanRegistrationEmailTextField() {
+        registrationEmailTextField.text = ""
+        registrationEmailTextField.resignFirstResponder()
+        print("text has been deleted")
+    }
     
     // MARK: CREATE NEW ACCOUNT
     
@@ -139,7 +149,9 @@ class ViewController: UIViewController {
                     self?.isUserLoggedIn.isHidden = false
                     print(FirebaseAuth.Auth.auth().currentUser)
                     print(FirebaseAuth.Auth.auth().currentUser?.email)
-                    // little code about how to check is emailVerified or not
+                    
+                    // MARK: There should be segue into the Lock/Main Screen
+                        
                 } else {
                     // 3. Alert controller - emain need to be verified
                     print("User still need to verify email")
@@ -186,7 +198,30 @@ class ViewController: UIViewController {
     }
     
     // MARK: - Private Methods
+    func setupUI() {
+        setupSignUpEmailTextField()
+        setupCleaningButton()
+    }
     
+    func setupSignUpEmailTextField() {
+        // registrationEmailTextField.clearButtonMode = .whileEditing
+        let textFieldPadding = UIEdgeInsets(top: 0, left: 0, bottom: 0, right: 60)
+        
+         registrationEmailTextField.bounds.inset(by: textFieldPadding)
+        
+    }
+    
+    private func setupCleaningButton() {
+        registrationEmailTextField.rightView = customCleanButton
+        registrationEmailTextField.rightViewMode = .whileEditing
+        addActionToCleaningButton()
+
+        
+    }
+    
+    private func addActionToCleaningButton() {
+        customCleanButton.addTarget(self, action: #selector(cleanRegistrationEmailTextField), for: .touchUpInside)
+    }
     
 }
 
